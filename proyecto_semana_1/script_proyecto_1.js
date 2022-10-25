@@ -1,4 +1,4 @@
-function test(param1, param2) {
+function test(param1, param2 = "X") {
 
     if (typeof param2 === "string") {
 
@@ -16,22 +16,6 @@ function test(param1, param2) {
 
     }
 
-    if (typeof param2 === "undefined") {
-
-
-        for (filas = 0; filas < param1; filas++) {
-            patron = ""
-
-            for (columnas = 0; columnas < param1; columnas++) {
-                patron = patron + "X"
-            }
-
-            console.log(patron);
-
-        }
-
-    }
-
     if (typeof param1 === "undefined") {
         console.log("Missing Size");
     }
@@ -39,4 +23,4 @@ function test(param1, param2) {
 
 }
 
-test(5, "O")
+test(5, "A")
