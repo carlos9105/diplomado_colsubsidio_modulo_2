@@ -23,4 +23,4 @@ function test(param1, param2 = "X") {
 
 }
 
-test(5, "A")
+test(5, "O")
