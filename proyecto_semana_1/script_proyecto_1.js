@@ -1,5 +1,9 @@
 function test(param1, param2 = "X") {
 
+    if (typeof param1 === "undefined" || typeof param1 === "string") {
+        console.log("Missing Size");
+    }
+
     if (typeof param2 === "string") {
 
 
@@ -16,11 +20,6 @@ function test(param1, param2 = "X") {
 
     }
 
-    if (typeof param1 === "undefined") {
-        console.log("Missing Size");
-    }
-
-
 }
 
-test(5, "O")
+test(6)
