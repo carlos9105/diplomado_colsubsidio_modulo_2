@@ -1,34 +1,34 @@
 let crearTarjetas = 
 [
     {
-        contTitulo: "Card #1",
-        contTexto: "Texto para card 1",
-        contBoton: "Pulsame 1"
+        cont_titulo: "Card #1",
+        cont_texto: "Texto para card 1",
+        cont_boton: "Pulsame 1"
     },
     {
-        contTitulo: "Card #2",
-        contTexto: "Texto para card 2",
-        contBoton: "Pulsame 2"
+        cont_titulo: "Card #2",
+        cont_texto: "Texto para card 2",
+        cont_boton: "Pulsame 2"
     },
     {
-        contTitulo: "Card #3",
-        contTexto: "Texto para card 3",
-        contBoton: "Pulsame 3"
+        cont_titulo: "Card #3",
+        cont_texto: "Texto para card 3",
+        cont_boton: "Pulsame 3"
     },
     {
-        contTitulo: "Card #4",
-        contTexto: "Texto para card 4",
-        contBoton: "Pulsame 4"
+        cont_titulo: "Card #4",
+        cont_texto: "Texto para card 4",
+        cont_boton: "Pulsame 4"
     },
     {
-        contTitulo: "Card #5",
-        contTexto: "Texto para card 5",
-        contBoton: "Pulsame 5"
+        cont_titulo: "Card #5",
+        cont_texto: "Texto para card 5",
+        cont_boton: "Pulsame 5"
     },
     {
-        contTitulo: "Card #6",
-        contTexto: "Texto para card 6",
-        contBoton: "Pulsame 6"
+        cont_titulo: "Card #6",
+        cont_texto: "Texto para card 6",
+        cont_boton: "Pulsame 6"
     },
 ]
 
@@ -54,16 +54,16 @@ crearTarjetas.forEach(element => {
     
     const titulo = document.createElement("h5");
     titulo.setAttribute("class", "card-title");
-    titulo.textContent = element.contTitulo;
+    titulo.textContent = element.cont_titulo;
     cuerpo.appendChild(titulo);
     
     const texto = document.createElement("p");
-    texto.textContent = element.contTexto;
+    texto.textContent = element.cont_texto;
     texto.setAttribute("class", "card-text");
     cuerpo.appendChild(texto);
     
     const boton = document.createElement("a");
-    boton.textContent = element.contBoton;
+    boton.textContent = element.cont_boton;
     boton.setAttribute("class", "btn btn-primary");
     cuerpo.appendChild(boton);
     
