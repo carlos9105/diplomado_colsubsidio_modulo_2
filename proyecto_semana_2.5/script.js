@@ -142,7 +142,7 @@ let crearTarjetas =
     },
 ]
 
-crearTarjetas.forEach(element => {
+function createCard(element){
 
     const grupoTarjetas = document.getElementById("grupoTarjetas");
 
@@ -195,4 +195,6 @@ crearTarjetas.forEach(element => {
 
     grupoTarjetas.appendChild(fragment_tarjeta);
 
-});
+}
+
+crearTarjetas.forEach(element => createCard(element));
