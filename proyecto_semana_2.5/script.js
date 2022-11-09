@@ -1,3 +1,5 @@
+// INICIO NAVBAR
+
 const navbar = document.getElementById("navbar");
         
     const fragment_navbar = document.createDocumentFragment();
@@ -77,75 +79,120 @@ const navbar = document.getElementById("navbar");
 
     navbar.appendChild(fragment_navbar);
 
+// FIN NAVBAR
+
+// INICIO INFO
+
+    const info = document.getElementById("info");
+
+    const fragment_info = document.createDocumentFragment();
+    
+    const principal_info = document.createElement("div");
+    principal_info.setAttribute("class", "w-100 bg-info");
+    fragment_info.appendChild(principal_info);
+    
+    const texto_info = document.createElement("h1");
+    texto_info.setAttribute("class","text-light text-center py-4");
+    texto_info.textContent="¡Tenemos más de 1.000 Funko pop para elegir!";
+    principal_info.appendChild(texto_info);
+    
+    info.appendChild(fragment_info);
+    
+// FIN INFO
+
+// INICIO CARDS
+
 let crearTarjetas = 
 [
     {
-        cont_titulo: "Card #1",
-        cont_texto: "Texto para card 1",
-        cont_boton: "Pulsame 1"
+        cont_imagen: "./Imagenes/Avengers_01.jpg",
+        cont_titulo: "Funko Pop Marvel: Captain Carter",
+        cont_3linea: "25cm",
+        cont_4linea: "$85.900",
     },
     {
-        cont_titulo: "Card #2",
-        cont_texto: "Texto para card 2",
-        cont_boton: "Pulsame 2"
+        cont_imagen: "./Imagenes/Disney_01.jpg",
+        cont_titulo: "Funko Pop Disney: Cinderella",
+        cont_3linea: "23cm",
+        cont_4linea: "$75.500",
     },
     {
-        cont_titulo: "Card #3",
-        cont_texto: "Texto para card 3",
-        cont_boton: "Pulsame 3"
+        cont_imagen: "./Imagenes/Harry_potter_01.JPG",
+        cont_titulo: "Funko Pop Harry Potter",
+        cont_3linea: "27cm",
+        cont_4linea: "$89.900",
     },
     {
-        cont_titulo: "Card #4",
-        cont_texto: "Texto para card 4",
-        cont_boton: "Pulsame 4"
+        cont_imagen: "./Imagenes/Cartoon_network_01.JPG",
+        cont_titulo: "Funko Pop Johny Bravo",
+        cont_3linea: "26cm",
+        cont_4linea: "$85.500",
     },
     {
-        cont_titulo: "Card #5",
-        cont_texto: "Texto para card 5",
-        cont_boton: "Pulsame 5"
+        cont_imagen: "./Imagenes/Harry_potter_02.jpg",
+        cont_titulo: "Funko Pop Ron Weasley",
+        cont_3linea: "24cm",
+        cont_4linea: "$60.000",
     },
     {
-        cont_titulo: "Card #6",
-        cont_texto: "Texto para card 6",
-        cont_boton: "Pulsame 6"
+        cont_imagen: "./Imagenes/Avengers_03.JPG",
+        cont_titulo: "Funko Pop Marvel: Ironman",
+        cont_3linea: "28cm",
+        cont_4linea: "$95.900",
     },
 ]
 
 crearTarjetas.forEach(element => {
 
-    const tarjeta = document.getElementById("tarjeta");
-        
-    const fragment_cards = document.createDocumentFragment();
-    
-    const principal = document.createElement("div");
-    principal.setAttribute("class", "card m-1");
-    principal.setAttribute("style", "width: 18rem");
-    fragment_cards.appendChild(principal);
-    
-    const imagen = document.createElement("img");
-    imagen.src = "https://www.researchgate.net/profile/Maria-Monreal/publication/315108532/figure/fig1/AS:472492935520261@1489662502634/Figura-2-Avatar-que-aparece-por-defecto-en-Facebook.png";
-    imagen.setAttribute("class", "card-img-top");
-    principal.appendChild(imagen);
-    
-    const cuerpo = document.createElement("div");
-    cuerpo.setAttribute("class", "card-body");
-    principal.appendChild(cuerpo);
-    
-    const titulo = document.createElement("h5");
-    titulo.setAttribute("class", "card-title");
-    titulo.textContent = element.cont_titulo;
-    cuerpo.appendChild(titulo);
-    
-    const texto = document.createElement("p");
-    texto.textContent = element.cont_texto;
-    texto.setAttribute("class", "card-text");
-    cuerpo.appendChild(texto);
-    
-    const boton = document.createElement("a");
-    boton.textContent = element.cont_boton;
-    boton.setAttribute("class", "btn btn-primary");
-    cuerpo.appendChild(boton);
-    
-    tarjeta.appendChild(fragment_cards);
+    const grupoTarjetas = document.getElementById("grupoTarjetas");
+
+    const fragment_tarjeta = document.createDocumentFragment();
+
+    const principal_tarjeta = document.createElement("div");
+    principal_tarjeta.setAttribute("class","col-lg-3 col-md-6 col-sm-6 px-2 py-2");
+    fragment_tarjeta.appendChild(principal_tarjeta);
+
+    const div2_tarjeta = document.createElement("div");
+    div2_tarjeta.setAttribute("class","card h-100 d-flex align-items-center");
+    principal_tarjeta.appendChild(div2_tarjeta);
+
+    const contenedor_imagen = document.createElement("div");
+    contenedor_imagen.setAttribute("class","col-10 h-50 mx-auto d-flex align-items-center py-5");
+    div2_tarjeta.appendChild(contenedor_imagen);
+
+    const imagen_tarjeta = document.createElement("img");
+    imagen_tarjeta.setAttribute("class","card-img-top");
+    imagen_tarjeta.setAttribute("src",element.cont_imagen);
+    contenedor_imagen.appendChild(imagen_tarjeta);
+
+    const contenedor_cuerpo = document.createElement("div");
+    contenedor_cuerpo.setAttribute("class","card-body h-50 d-flex flex-wrap align-items-center text-dark bg-light w-100 justify-content-center text-center");
+    div2_tarjeta.appendChild(contenedor_cuerpo);
+
+    const cuerpo_titulo = document.createElement("h6");
+    cuerpo_titulo.textContent = element.cont_titulo;
+    contenedor_cuerpo.appendChild(cuerpo_titulo);
+
+    const cuerpo_1linea = document.createElement("p");
+    cuerpo_1linea.textContent = "-";
+    cuerpo_1linea.setAttribute("class","w-100");
+    contenedor_cuerpo.appendChild(cuerpo_1linea);
+
+    const cuerpo_2linea = document.createElement("p");
+    cuerpo_2linea.textContent = "Funko";
+    cuerpo_2linea.setAttribute("class","w-100");
+    contenedor_cuerpo.appendChild(cuerpo_2linea);
+
+    const cuerpo_3linea = document.createElement("p");
+    cuerpo_3linea.textContent = element.cont_3linea;
+    cuerpo_3linea.setAttribute("class","w-100");
+    contenedor_cuerpo.appendChild(cuerpo_3linea);
+
+    const cuerpo_4linea = document.createElement("p");
+    cuerpo_4linea.textContent = element.cont_4linea;
+    cuerpo_4linea.setAttribute("class","w-100");
+    contenedor_cuerpo.appendChild(cuerpo_4linea);
+
+    grupoTarjetas.appendChild(fragment_tarjeta);
 
 });
