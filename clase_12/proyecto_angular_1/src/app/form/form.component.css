@@ -1,0 +1,20 @@
+.lista_1 {
+    list-style: none;
+    color:#d10000;
+}
+
+.lista_2 {
+    list-style: circle;
+}
+
+.lista_3 {
+    list-style: square;
+}
+
+.lista_4 {
+    list-style: lower-roman;
+}
+
+.lista_5 {
+    list-style: lower-greek;
+}
