@@ -9,7 +9,7 @@ import { Card } from './card/card.model';
 export class AppComponent {
     title = 'Proyecto_semana_3';
 
-    tarjetas = [{
+    tarjetas: Card[] = [{
       imagen:"https://www.saramusico.com/wp-content/uploads/2019/04/foto-de-perfil-en-linkedin.jpg",
       nombre:"Martina D.",
       contenido:"Gerente Financiero",
