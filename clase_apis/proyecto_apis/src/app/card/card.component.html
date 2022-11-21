@@ -1,0 +1,11 @@
+<div class="card">
+    <img [src]="characterInfo.image" class="card-img-top" style="width:auto; height:20rem; object-fit: cover" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{ characterInfo.name }}</h5>
+      <p class="card-text">{{ characterInfo.status }}</p>
+    </div>
+  </div>
+
+<input type="text" name="number" placeholder="Enter number" #chNum/>
+<br>
+<button (click)="getCharacter(chNum.value)">Traer personaje</button>

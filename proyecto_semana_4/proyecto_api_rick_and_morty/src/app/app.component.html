@@ -1,0 +1,31 @@
+<div class="container">
+<h2>Ubicación</h2>
+</div>
+
+<br>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-md-4 col-lg-3">
+      <app-card-location></app-card-location>
+    </div>
+  </div>
+</div>
+
+<br>
+<hr>
+<br>
+
+<div class="container">
+<h2>Residentes</h2>
+</div>
+
+<br>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-md-4 col-lg-3" *ngFor="let residente of residentes">
+      <app-card [cardInfo]=residente></app-card>
+    </div>
+  </div>
+</div>
