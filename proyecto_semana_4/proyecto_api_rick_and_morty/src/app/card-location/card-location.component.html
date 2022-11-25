@@ -1,14 +1,7 @@
 <div class="card mt-3 mb-2">
-  <img [src]="cardLocInfo.image" class="card-img-top" style="width:auto; height:20rem; object-fit: cover" alt="...">
   <div class="card-body">
-    <h5 class="card-title text-danger">{{ cardLocInfo.name }}</h5>
-    <br>
-    <p class="card-text">Tipo: {{ cardLocInfo.type }}</p>
-    <p class="card-text">Dimensión: {{ cardLocInfo.dimension }}</p>
+    <h5 class="card-title text-danger text-center">{{ cardLocInfo.name }}</h5>
+    <p class="card-text text-center my-0">Tipo: {{ cardLocInfo.type }}</p>
+    <p class="card-text text-center">Dimensión: {{ cardLocInfo.dimension }}</p>
   </div>
 </div>
-
-<br>
-
-<input #ltNum type="text" placeholder="Ingresa # de ubicación"> 
-<button (click)="getLocation(ltNum.value)">Buscar Ubicación</button>

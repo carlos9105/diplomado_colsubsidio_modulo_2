@@ -1,7 +1,10 @@
 <div class="card mt-3 mb-2">
-    <img [src]="cardInfo.image" class="card-img-top" alt="..." style="width: auto; height: 17rem; object-fit: cover;">
+    <img id="cardInfo" [src]="cardInfo.image" class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">{{ cardInfo.name }}</h5>
-      <p class="card-text">{{ cardInfo.status }}</p>
+      <h5 class="card-title text-primary">{{ cardInfo.name }}</h5>
+      <p class="card-text my-0">STATUS: {{ cardInfo.status }}</p>
+      <p class="card-text my-0">ID: {{ cardInfo.id }}</p>
+      <p class="card-text my-0">GENDER: {{ cardInfo.gender }}</p>
+      <p class="card-text my-0">SPECIE: {{ cardInfo.species }}</p>
     </div>
   </div>

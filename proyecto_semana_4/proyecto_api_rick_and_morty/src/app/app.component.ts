@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Card } from './card/card.model';
+import { RickAndMortyService } from './services/rick-and-morty.service';
 
 @Component({
   selector: 'app-root',
@@ -9,36 +9,39 @@ import { Card } from './card/card.model';
 export class AppComponent {
   title = 'proyecto_api_rick_and_morty';
 
+  cardLocInfo: any
+  cardInfo: any = []
 
-residentes: Card[] = [{
-  image:"1",
-  name:"1",
-  status:"1"
-},
-{
-  image:"2",
-  name:"2",
-  status:"2"
-},
-{
-  image:"3",
-  name:"3",
-  status:"3"
-},
-{
-  image:"4",
-  name:"4",
-  status:"4"
-},
-{
-  image:"5",
-  name:"5",
-  status:"5"
-},
-{
-  image:"6",
-  name:"6",
-  status:"6"
-},
-  ]
+  constructor(private LocService: RickAndMortyService) {}
+
+  getLocation(ltNum: any) {
+    //obs = elemento observable  
+    const obs = this.LocService.location(ltNum)
+    obs.subscribe(
+      response => {
+          this.cardLocInfo = response
+          this.cardInfo=[]
+          console.log(response)
+        },
+        error => console.log(error)
+    )
+  }
+
+
+  getResidents() {
+    console.log(this.cardLocInfo.residents);
+
+    this.cardLocInfo.residents.forEach((element:string) => {
+      const obs = this.LocService.resident(element)
+
+      obs.subscribe(
+        response => {
+            this.cardInfo.push(response)
+            console.log(response)
+          },
+          error => console.log(error)
+      )
+
+    });
+  }
 }

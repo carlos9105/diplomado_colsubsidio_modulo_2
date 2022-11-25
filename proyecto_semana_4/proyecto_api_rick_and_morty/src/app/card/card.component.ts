@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Card } from './card.model';
+import { RickAndMortyService } from '../services/rick-and-morty.service';
 
 @Component({
   selector: 'app-card',
@@ -8,12 +8,19 @@ import { Card } from './card.model';
 })
 export class CardComponent {
 
-@Input() cardInfo:Card = {
+  @Input() cardInfo: any
 
-image:'https://d500.epimg.net/cincodias/imagenes/2016/07/04/lifestyle/1467646262_522853_1467646344_noticia_normal.jpg',
-name:"Default",
-status:"Default"
+  constructor(private RMService: RickAndMortyService) {}
 
-}
-
+  getCharacter(chNum: any) {
+    //obs = elemento observable  
+    const obs = this.RMService.character(chNum)
+    obs.subscribe(
+      response => {
+          this.cardInfo = response
+          console.log(response)
+        },
+        error => console.log(error)
+    )
+  }
 }

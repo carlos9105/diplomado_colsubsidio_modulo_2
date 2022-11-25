@@ -1,0 +1,28 @@
+<h3>Login</h3>
+
+<br>
+
+<div class="w-25">
+    <form #form="ngForm" (ngSubmit)="onRegister(form)">
+        <label for="Name" class="form-label">Nombre</label>
+        <div class="input-group mb-3">
+            <input name="name" type="text" class="form-control" placeholder="Ingresa tu nombre" [(ngModel)]="register.name" required>
+        </div>
+
+        <label for="Email address" class="form-label">Email</label>
+        <div class="input-group mb-3">
+            <input name="email" type="email" class="form-control" placeholder="Ingresa tu email" [(ngModel)]="register.email" required>
+        </div>
+
+        <label for="Password" class="form-label">Contraseña</label>
+        <div class="input-group mb-3">
+            <input name="password" type="password" class="form-control" placeholder="Ingresa tu contraseña" [(ngModel)]="register.pwd" required>
+        </div>
+
+        <p>{{register.name}}</p>
+        <p>{{register.email}}</p>
+        <p>{{register.pwd}}</p>
+
+        <button type="submit" [disabled]="form.invalid">Registrar</button>
+    </form>
+</div>

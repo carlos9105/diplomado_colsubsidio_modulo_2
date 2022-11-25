@@ -1,22 +1,30 @@
-<div class="container">
-<h2>Ubicación</h2>
+<div class="container d-flex justify-content-center">
+    <h1>API RICK AND MORTY</h1>
 </div>
 
 <br>
 
-<div class="container">
+<div class="container d-flex justify-content-center">
+  <h3>Ubicación</h3>
+</div>
+
+<div class="container d-flex justify-content-center">
   <div class="row">
-    <div class="col-sm-6 col-md-4 col-lg-3">
-      <app-card-location></app-card-location>
+    <div class="col">
+      <app-card-location [cardLocInfo]="cardLocInfo"></app-card-location>
+      <input #ltNum type="text" placeholder="Ingresa # de ubicación"> 
+      <button (click)="getLocation(ltNum.value)">Buscar Ubicación</button>
     </div>
   </div>
 </div>
+
+
 
 <br>
 <hr>
 <br>
 
-<div class="container">
+<div class="container d-flex justify-content-center">
 <h2>Residentes</h2>
 </div>
 
@@ -24,8 +32,17 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-sm-6 col-md-4 col-lg-3" *ngFor="let residente of residentes">
-      <app-card [cardInfo]=residente></app-card>
+    <div class="col-sm-6 col-md-4 col-lg-3" *ngFor="let card of cardInfo">
+      <app-card [cardInfo]="card"></app-card>
     </div>
   </div>
 </div>
+
+<br>
+
+
+<div class="container d-flex justify-content-center">
+  <button (click)="getResidents()">Mostrar personajes</button>
+</div>
+
+<br>

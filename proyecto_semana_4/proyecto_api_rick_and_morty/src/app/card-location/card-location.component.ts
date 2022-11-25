@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { LocationService } from '../services/location.service';
 
 @Component({
   selector: 'app-card-location',
@@ -8,20 +7,9 @@ import { LocationService } from '../services/location.service';
 })
 export class CardLocationComponent {
 
-cardLocInfo: any
+@Input() cardLocInfo: any
 
-constructor(private LocService: LocationService) {}
+constructor() {}
 
-  getLocation(ltNum: any) {
-    //obs = elemento observable  
-    const obs = this.LocService.location(ltNum)
-    obs.subscribe(
-      response => {
-          this.cardLocInfo = response
-          console.log(response)
-        },
-        error => console.log(error)
-    )
-  }
 
 }
