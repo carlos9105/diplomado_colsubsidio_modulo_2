@@ -1,0 +1,12 @@
+<div class="card" style="width: 18rem;">
+    <img [src]= "characterInfo.image" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{ characterInfo.name }}</h5>
+      <p class="card-text">{{ characterInfo.status }}</p>
+      <p class="card-text">{{ characterInfo.species }}</p>
+      <p class="card-text">{{ characterInfo.gender }}</p>
+
+      <input type="number" #idCharacter>
+      <button (click)= getCharacter(idCharacter.value)>Traer personaje</button>
+    </div>
+  </div>
