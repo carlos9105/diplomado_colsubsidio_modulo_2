@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+
 
 @Component({
   selector: 'app-carrusel',
   templateUrl: './carrusel.component.html',
   styleUrls: ['./carrusel.component.css']
 })
-export class CarruselComponent implements OnInit {
+export class CarruselComponent {
+
+@Input() slImages:any = []
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }

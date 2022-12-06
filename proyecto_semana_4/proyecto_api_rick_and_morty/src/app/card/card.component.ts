@@ -10,17 +10,17 @@ export class CardComponent {
 
   @Input() cardInfo: any
 
-  constructor(private RMService: RickAndMortyService) {}
+//   constructor(private RMService: RickAndMortyService) {}
 
-  getCharacter(chNum: any) {
-    //obs = elemento observable  
-    const obs = this.RMService.character(chNum)
-    obs.subscribe(
-      response => {
-          this.cardInfo = response
-          console.log(response)
-        },
-        error => console.log(error)
-    )
-  }
+//   getCharacter(chNum: any) {
+//     //obs = elemento observable  
+//     const obs = this.RMService.character(chNum)
+//     obs.subscribe(
+//       response => {
+//           this.cardInfo = response
+//           console.log(response)
+//         },
+//         error => console.log(error)
+//     )
+//   }
 }
